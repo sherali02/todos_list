@@ -17,6 +17,13 @@ const TodoList = () => {
     setnewtask(event.target.value);
   }
 
+  const heading = () => {
+    if (tasks.length === 0) return "ToDo list is empty.. ";
+    else {
+      return "Your ToDo's:--";
+    }
+  }
+
   const addtask = () => {
     if (newtask.trim() !== "") {
       settasks(t => [...t, [newtask, 0]]);
@@ -67,22 +74,23 @@ const TodoList = () => {
   return (
     <div>
       <div className="todo_list">
-
         <h1><img src="TODO.svg" alt="My Happy SVG" width='100px' height={'100px'} style={{
-          margin: "-25px 3px"
+          margin: "-15px 3px"
         }}
-        />TODO-List</h1>
+        />ToDo <span className="badge">List</span></h1>
         <div>
           <input type="text" placeholder='Enter a task...' value={newtask} onChange={handleInput} />
           <button className="add-button" onClick={addtask}>Add</button>
+        </div>
+        <div className='heading'>
+          {heading()}
         </div>
         <ol>
           {
             tasks.map((task, index) =>
               <li key={index} className={task[1] === 1 ? 'completed' : ''}>
-                <button className='completeButton' onClick={() => markComplete(index)}><svg xmlns="http://www.w3.org/2000/svg" className={task[1] === 1 ? 'symbol2' : 'symbol1'} width="20" height="20" viewBox="0 0 16 16" >
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                  <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
+                <button className='completeButton' onClick={() => markComplete(index)}><svg xmlns="http://www.w3.org/2000/svg" className={task[1] === 1 ? 'symbol2' : 'symbol1'} width="20" height="20" fill="black" class="bi bi-check-lg" viewBox="0 0 16 16">
+                  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
                 </svg></button>
                 <span className='text'>{task[0]}</span>
                 <button className="delete-button" onClick={() => deletetask(index)}>

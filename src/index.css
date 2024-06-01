@@ -98,6 +98,21 @@ li {
   margin-left: 10px;
 }
 
+.badge {
+  background-color: rgb(47, 47, 47);
+  color: white;
+  padding: 0px 15px;
+  border-radius: 10px;
+}
+
+.heading{
+  margin-top: 25px;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .completed {
   background-color: rgb(121, 234, 138);
   text-decoration: line-through;
