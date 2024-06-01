@@ -1,14 +1,14 @@
 {
-  "homepage": "https://sherali02.github.io/todos_list",
+  "homepage": "https://sherali02.github.io/todos_list1",
   "name": "todos_list1",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
-    "build": "vite dist",
+    "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
