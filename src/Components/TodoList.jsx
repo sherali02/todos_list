@@ -27,7 +27,7 @@ const TodoList = () => {
   const addtask = () => {
     if (newtask.trim() !== "") {
       settasks(t => [...t, [newtask, 0]]);
-      setnewtask([""]);
+      setnewtask("");
     }
     else {
       alert("Task is Empty!\nEnter a TODO to add.");
